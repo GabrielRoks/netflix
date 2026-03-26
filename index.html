@@ -1,42 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <h1>Quem está assistindo?</h1>
-        <section aria-label="Perfis disponíveis">
-            <nav class="profiles">
-                <a href="#" class="profile">
-                    <figure>
-                        <img src="/assets/perfil-1.jpg" alt="Homem de massa estilo Tim Burton">
-                        <figcaption>Taka</figcaption>
-                    </figure>
-                </a>
-                <a href="#" class="profile">
-                    <figure>
-                        <img src="/assets/perfil-2.jpg" alt="Mulher de massa estilo Tim Burton">
-                        <figcaption>Japa</figcaption>
-                    </figure>
-                </a>
-                <a href="#" class="profile">
-                    <figure>
-                        <img src="/assets/perfil-3.jpg" alt="Mulher de massa estilo Tim Burton">
-                        <figcaption>Carlos</figcaption>
-                    </figure>
-                </a>
-                <a href="#" class="profile">
-                    <figure>
-                        <img src="/assets/perfil-4.jpg" alt="Mulher de massa estilo Tim Burton">
-                        <figcaption>Zendaya</figcaption>
-                    </figure>
-                </a>
-            </nav>
-        </section>
+        <button onclick="toggleTheme()"style="position:absolute;top:1rem;right:1rem; z-index: 10">Alternar tema</button>
+      <h1>Quem está assistindo?</h1>
+      <section aria-label="Perfis disponíveis">
+        <nav class="profiles">
+          <ul>
+            <li>
+              <a href="#" class="profile">
+                <figure>
+                  <img
+                    src="/assets/perfil-1.jpg"
+                    alt="Homem de massa estilo Tim Burton"
+                  />
+                  <figcaption>Taka</figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="profile">
+                <figure>
+                  <img
+                    src="/assets/perfil-2.jpg"
+                    alt="Mulher de massa estilo Tim Burton"
+                  />
+                  <figcaption>Japa</figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="profile">
+                <figure>
+                  <img
+                    src="/assets/perfil-3.jpg"
+                    alt="Mulher de massa estilo Tim Burton"
+                  />
+                  <figcaption>Carlos</figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="profile">
+                <figure>
+                  <img
+                    src="/assets/perfil-4.jpg"
+                    alt="Mulher de massa estilo Tim Burton"
+                  />
+                  <figcaption>Zendaya</figcaption>
+                </figure>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
     </main>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
