@@ -1,5 +1,14 @@
 body {
-    background: #141414;
+    background: linear-gradient(135deg, #141414 55%, #e50914);
+    /* background-size: 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+
+    animation: brilho 10s linear infinite; */
+    /* background: #141414; */
     /* Define a cor de fundo da página */
     color: #fff;
     /* Define a cor do texto principal */
@@ -25,14 +34,32 @@ main {
 }
 
 h1 {
+    display: inline-block;
     font-size: 2.5rem;
-    /* Define o tamanho da fonte do título */
     font-weight: bold;
-    /* Deixa o texto em negrito */
+    padding: 10px;
+    border-radius: 4px;
+
+    background: linear-gradient(90deg, #ff0000, #ff4d4d, #ffffff, #ff0000);
+    background-size: 300%; /* <-- AQUI */
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: brilho 7s linear infinite;
+
     margin-bottom: 2rem;
-    /* Espaço abaixo do título */
     letter-spacing: 1px;
-    /* Espaçamento entre letras */
+}
+
+@keyframes brilho {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 300%;
+    }
 }
 
 section[aria-label="Perfis disponíveis"] {
@@ -46,7 +73,18 @@ section[aria-label="Perfis disponíveis"] {
     /* Centraliza os perfis */
 }
 
-nav.profiles {
+.lista-perfis {
+    display: flex;
+    /* Usa flexbox para a lista de perfis */
+    gap: 20px;
+    /* Espaço entre os perfis */
+    /* flex-wrap: wrap; */
+    /* Permite que os perfis quebrem para a próxima linha em telas menores */
+    justify-content: center;
+    /* Centraliza os perfis */
+}
+
+nav.perfil {
     display: flex;
     /* Usa flexbox para os perfis */
     gap: 2rem;
@@ -63,13 +101,38 @@ ul {
     gap: 1rem; /* Espaço entre os itens */
 }
 
-.profile {
+.lista-perfis {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.perfil {
     text-decoration: none;
     /* Remove sublinhado dos links */
     color: #fff;
     /* Cor do texto dos links */
-    transition: transform 0.2s, box-shadow 0.2s;
+    /* transition: transform 0.2s, box-shadow 0.2s; */
     /* Suaviza animações de transformação e sombra */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.lista-perfis:hover .perfil:not(:hover) {
+    opacity: 0.5;
+}
+
+.perfil:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 10;
+}
+
+.perfil img {
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+
+.perfil:hover img {
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
 }
 
 figure {
@@ -124,7 +187,7 @@ body.light-mode {
     color: #222; /* Cor do texto escura */
 }
 
-.light-mode .profile {
+.light-mode .perfil {
     color: #222; /* Links escuros */
 }
 
@@ -147,7 +210,7 @@ body.light-mode {
         /* Adiciona espaçamento lateral */
     }
 
-    nav.profiles {
+    nav.perfil {
         gap: 1rem;
         /* Reduz espaço entre perfis */
     }
@@ -174,7 +237,7 @@ body.light-mode {
         padding: 2rem 0;
     }
 
-    nav.profiles {
+    nav.perfil {
         flex-direction: column;
         /* Perfis em coluna */
         align-items: center;
@@ -187,15 +250,15 @@ body.light-mode {
 }
 
 @media (min-width: 901px) {
-    nav.profiles {
+    nav.perfil {
         flex-direction: row; /* Perfis na horizontal em telas grandes */
         align-items: center;
     }
 
     img {
-        width: 70px;
+        width: 120px;
         /* Imagem menor */
-        height: 70px;
+        height: 120px;
     }
 
     h1 {
@@ -207,4 +270,25 @@ body.light-mode {
         font-size: 1rem;
         /* Legenda menor */
     }
+}
+
+button {
+    margin-top: 2rem;
+    /* Espaço acima do botão */
+    padding: 0.75rem 1.5rem;
+    /* Espaçamento interno do botão */
+    font-size: 1rem;
+    /* Tamanho da fonte do botão */
+    color: #fff;
+    /* Cor do texto do botão */
+    background-color: #e50914;
+    /* Cor de fundo do botão (vermelho Netflix) */
+    border: none;
+    /* Remove borda padrão */
+    border-radius: 4px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease;
+    /* Animação suave para mudança de cor */
 }
